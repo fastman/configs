@@ -1,0 +1,6 @@
+#caption always "$HOSTNAME %{-b}%{= wb}%-Lw%{= wr}%50>%{+b}%n%f %t%{=wb}%{-b}%+Lw%{= wr}%-017= %c %Y-%m-%d"
+caption always "%{=b}%?%F%:%45=%n*%f %t%?%?%F%{r}%:%{s kk}%?%H%?%F%{-}%? %L=%-Lw%45L>%?%F%{g}%?%n*%f %t%?%F%{-}%?%+Lw%-17= %?%F%{y}%?%c %Y-%m-%d%?"
+#deflogin off
+
+defscrollback 7000
+
