@@ -81,6 +81,7 @@ map <C-x> zo
 map <C-z> zc
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <silent> <C-F> :NERDTreeFind<CR>
+nmap <silent> <C-N> :silent noh<CR>
 noremap <C-M> :set hlsearch! hlsearch?<CR>
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
