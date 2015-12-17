@@ -7,88 +7,120 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'ruby.vim'
-Bundle 'SuperTab-continued.'
-Bundle 'ack.vim'
-Bundle 'The-NERD-tree'
-Bundle 'NERD_Tree-and-ack'
-Bundle 'fugitive.vim'
-Bundle 'surround.vim'
-Bundle 'rails.vim'
-Bundle 'AutoClose'
-Bundle 'cpp.vim'
-Bundle 'snippetsEmu'
-Bundle 'Tabular'
-" Bundle 'ada.vim'
-Bundle 'Tagbar'
-Bundle "pangloss/vim-javascript"
-Bundle 'https://github.com/myhere/vim-nodejs-complete'
-Bundle 'https://github.com/puppetlabs/puppet-syntax-vim'
-""Bundle 'airblade/vim-gitgutter'
+" kolorki
+Plugin 'jellybeans.vim'
+Plugin 'twilight'
+
+" git
+Plugin 'airblade/vim-gitgutter'
+
+" boxy 
+Plugin 'ack.vim'
+Plugin 'The-NERD-tree'
+"Plugin 'nerdtree-ack'
+Plugin 'NERD_Tree-and-ack'
+Plugin 'Tagbar'
+"Plugin 'roman/golden-ratio'
+
+" wyrownywanie
+Plugin 'Tabular'
+
+Plugin 'surround.vim'
+Plugin 'SuperTab'
+
+Plugin "pangloss/vim-javascript"
+
+" smutne pluginy :<
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'isRuslan/vim-es6'
+
+" jade
+Plugin 'jade.vim'
+
+" mxw/vim-jsx.git
+Plugin 'mxw/vim-jsx'
 
 
-" rozpoznawanie typu pliku
-" filetype plugin on
-" filetype indent on 
-filetype plugin indent on
+" syntax
+"" Plugin 'ada.vim'
+"Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
 
-set expandtab       " soft-tab"
-set ts=4 			" szerokosc tabulacji :)
-set sw=4 			" szerokosc automagicznego wciecia
-set autoindent		" automatyczne wciecia
-set ruler   		" pozycja kursora
-set number			" numerowanie wierszy
-set nowrap 			" niezwijaj linii
-set cursorline
+Plugin 'ruby.vim'
+
+"Plugin 'SuperTab-continued.'
+"Plugin 'ack.vim'
+"Plugin 'fugitive.vim'
+Plugin 'rails.vim'
+"Plugin 'AutoClose'
+"Plugin 'cpp.vim'
+"Plugin 'snippetsEmu'
+"Plugin 'https://github.com/myhere/vim-nodejs-complete'
+
+Plugin 'kylef/apiblueprint.vim'
+Plugin 'vim-scripts/logstash.vim'
+
+syntax on                 " kolorowanie skladni
+filetype plugin indent on " rozpoznawanie typow plikow
+
+set expandtab  " soft-tab
+set ts=2       " szerokosc tabulacji :)
+set sw=2       " szerokosc automagicznego wciecia
+set autoindent " automatyczne wciecia
+set ruler      " pozycja kursora
+set number     " numerowanie wierszy
+set nowrap     " niezwijaj linii
+set showmatch  " pokazuja matchujace nawiasy
+"set smarttab - moze uzyc
+"set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
 
 set showcmd " ???
-set showmatch 
 set hlsearch " zaznaczanie w szukajce
 set laststatus=2 " pokazuj linie ze statusem
-"set coursorline 	
-" pokazuj zaznaczenie linii"
-set nocompatible    " hmm ? :)
-
 
 " kodowanie
 set fileencodings=utf-8,latin2
 
 
 
-set foldmethod=indent
-set foldcolumn=3 	" kolumna z zaznaczonymi foldami
-set foldminlines=2
-set foldnestmax=10
-set foldlevel=1 
+""set foldmethod=indent
+""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
+""set foldminlines=2
+""set foldnestmax=10
+""set foldlevel=1 
 set visualbell
-set cc=80
+set cc=120
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
 
 set wildmenu " pokazanie (bash-like) przy tab 
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
+" Backups
+set directory=~/.swp-vim//
+
 " colorscheme elflord " kolorki :]
-" colorscheme desert " kolorki :]
+" colorscheme desesmarttabrt " kolorki :]
 " colorscheme eclipse " kolorki :]
 " colorscheme zmrok " kolorki :]
 colorscheme jellybeans " kolorki :]
 
 " magiczne aliasy sobie porobilem dla zwijania :)
-map <C-x> zo
-map <C-z> zc
+"map <C-x> zo
+"map <C-z> zc
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <silent> <C-F> :NERDTreeFind<CR>
 nmap <silent> <C-N> :silent noh<CR>
-noremap <C-M> :set hlsearch! hlsearch?<CR>
+"noremap <C-M> :set hlsearch! hlsearch?<CR> - sciągnąc z pracy
 
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+"let g:html_indent_inctags = "html,body,head,tbody"
+"let g:html_indent_script1 = "inc"
+"let g:html_indentsmarttab_style1 = "inc"
+"
+"let g:golden_ratio_exclude_nonmodifiable = 1
