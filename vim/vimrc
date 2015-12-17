@@ -5,9 +5,9 @@
 set nocompatible    " hmm ? :)
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 " kolorki
 Plugin 'jellybeans.vim'
@@ -30,7 +30,7 @@ Plugin 'Tabular'
 Plugin 'surround.vim'
 Plugin 'SuperTab'
 
-Plugin "pangloss/vim-javascript"
+Plugin 'pangloss/vim-javascript'
 
 " smutne pluginy :<
 Plugin 'kchmck/vim-coffee-script'
@@ -60,6 +60,8 @@ Plugin 'rails.vim'
 
 Plugin 'kylef/apiblueprint.vim'
 Plugin 'vim-scripts/logstash.vim'
+
+call vundle#end()
 
 syntax on                 " kolorowanie skladni
 filetype plugin indent on " rozpoznawanie typow plikow
