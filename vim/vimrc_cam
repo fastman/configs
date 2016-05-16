@@ -17,21 +17,23 @@ Plugin 'morhetz/gruvbox'
 " git
 Plugin 'airblade/vim-gitgutter'
 
-" boxy 
-Plugin 'ack.vim'
-Plugin 'The-NERD-tree'
+" boxy
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'The-NERD-tree'
 "Plugin 'nerdtree-ack'
-Plugin 'NERD_Tree-and-ack'
-Plugin 'Tagbar'
+"Plugin 'NERD_Tree-and-ack'
+Plugin 'majutsushi/tagbar'
 "Plugin 'roman/golden-ratio'
 
 " wyrownywanie
-Plugin 'Tabular'
+Plugin 'godlygeek/tabular'
 
-Plugin 'surround.vim'
+"Plugin 'surround.vim'
 Plugin 'SuperTab'
 
-Plugin 'pangloss/vim-javascript'
+" Javascript
+Plugin 'othree/yajs.vim'
 
 " JSON
 Plugin 'elzr/vim-json'
@@ -44,8 +46,7 @@ Plugin 'heavenshell/vim-jsdoc'
 " Plugin 'isRuslan/vim-es6'
 
 " jade
-" Plugin 'jade.vim'
-Plugin 'https://github.com/digitaltoad/vim-pug.git'
+Plugin 'digitaltoad/vim-pug'
 " handlebars/mustache
 Plugin 'mustache/vim-mustache-handlebars'
 
@@ -56,10 +57,12 @@ Plugin 'mxw/vim-jsx'
 " syntax
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
-Plugin 'https://github.com/scrooloose/syntastic.git'
+"Plugin 'https://github.com/scrooloose/syntastic.git'
 
 "Plugin 'ruby.vim'
 
+Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'Lokaltog/vim-powerline'
 "Plugin 'SuperTab-continued.'
 "Plugin 'ack.vim'
 "Plugin 'fugitive.vim'
@@ -69,13 +72,13 @@ Plugin 'https://github.com/scrooloose/syntastic.git'
 "Plugin 'snippetsEmu'
 "Plugin 'https://github.com/myhere/vim-nodejs-complete'
 
-Plugin 'kylef/apiblueprint.vim'
-Plugin 'vim-scripts/logstash.vim'
+" Plugin 'kylef/apiblueprint.vim'
+" Plugin 'vim-scripts/logstash.vim'
 
 call vundle#end()
 
-syntax on                 " kolorowanie skladni
 filetype plugin indent on " rozpoznawanie typow plikow
+syntax on                 " kolorowanie skladni
 
 set expandtab  " soft-tab
 set ts=4       " szerokosc tabulacji :)
@@ -94,8 +97,6 @@ set laststatus=2 " pokazuj linie ze statusem
 
 " kodowanie
 set fileencodings=utf-8,latin2
-
-
 
 ""set foldmethod=indent
 ""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
@@ -156,3 +157,12 @@ let g:jsdoc_underscore_private = 1
 
 " JSON plugin
 let g:vim_json_syntax_conceal = 0
+
+" NERDTree
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+
+" ag z ack
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
