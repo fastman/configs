@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'NERD_Tree-and-ack'
 Plugin 'majutsushi/tagbar'
 "Plugin 'roman/golden-ratio'
+Plugin 'zhaocai/GoldenView.Vim'
 
 " wyrownywanie
 Plugin 'godlygeek/tabular'
@@ -58,10 +59,13 @@ Plugin 'mxw/vim-jsx'
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
 "Plugin 'https://github.com/scrooloose/syntastic.git'
+" autocomplete
+Plugin 'Valloric/YouCompleteMe'
 
 "Plugin 'ruby.vim'
 
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'gavocanov/vim-js-indent'
 " Plugin 'Lokaltog/vim-powerline'
 "Plugin 'SuperTab-continued.'
 "Plugin 'ack.vim'
@@ -89,7 +93,7 @@ set number     " numerowanie wierszy
 set nowrap     " niezwijaj linii
 set showmatch  " pokazuja matchujace nawiasy
 "set smarttab - moze uzyc
-"set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
+set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
 
 set showcmd " ???
 set hlsearch " zaznaczanie w szukajce
@@ -103,7 +107,11 @@ set fileencodings=utf-8,latin2
 ""set foldminlines=2
 ""set foldnestmax=10
 ""set foldlevel=1 
+" visualbell
 set visualbell
+" totaly disabled :-)
+set t_vb=
+
 set cc=120
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
@@ -164,5 +172,13 @@ let g:NERDTreeDirArrowCollapsible = '▼'
 
 " ag z ack
 if executable('ag')
-    let g:ackprg = 'ag --nogroup --nocolor --column'
+    let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
 endif
+
+" golden ration nie rusza tagbar i nerdtree
+"let g:golden_ratio_exclude_nonmodifiable = 1
+"let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
+" disable default mapping
+let g:goldenview__enable_default_mapping = 0
+
+" 
