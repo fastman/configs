@@ -56,6 +56,7 @@ Plugin 'mxw/vim-jsx'
 
 
 " syntax
+Plugin 'groenewege/vim-less'
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
 "Plugin 'https://github.com/scrooloose/syntastic.git'
@@ -180,5 +181,3 @@ endif
 "let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
 " disable default mapping
 let g:goldenview__enable_default_mapping = 0
-
-" 
