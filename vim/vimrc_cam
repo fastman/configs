@@ -20,7 +20,6 @@ Plugin 'airblade/vim-gitgutter'
 " boxy
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'The-NERD-tree'
 "Plugin 'nerdtree-ack'
 "Plugin 'NERD_Tree-and-ack'
 Plugin 'majutsushi/tagbar'
@@ -54,7 +53,6 @@ Plugin 'mustache/vim-mustache-handlebars'
 " mxw/vim-jsx.git
 Plugin 'mxw/vim-jsx'
 
-
 " syntax
 Plugin 'groenewege/vim-less'
 "" Plugin 'ada.vim'
@@ -69,7 +67,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'gavocanov/vim-js-indent'
 " Plugin 'Lokaltog/vim-powerline'
 "Plugin 'SuperTab-continued.'
-"Plugin 'ack.vim'
 "Plugin 'fugitive.vim'
 "Plugin 'rails.vim'
 "Plugin 'AutoClose'
@@ -181,3 +178,6 @@ endif
 "let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
 " disable default mapping
 let g:goldenview__enable_default_mapping = 0
+
+set exrc
+set secure
