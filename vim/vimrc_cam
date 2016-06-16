@@ -1,7 +1,7 @@
 "
 " a moj pliczek vima ;]
 "
-" 
+"
 set nocompatible    " hmm ? :)
 filetype off
 
@@ -30,7 +30,7 @@ Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'godlygeek/tabular'
 
 "Plugin 'surround.vim'
-Plugin 'SuperTab'
+"Plugin 'SuperTab'
 
 " Javascript
 Plugin 'othree/yajs.vim'
@@ -45,34 +45,36 @@ Plugin 'heavenshell/vim-jsdoc'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'isRuslan/vim-es6'
 
-" jade
-Plugin 'digitaltoad/vim-pug'
-" handlebars/mustache
-Plugin 'mustache/vim-mustache-handlebars'
-
 " mxw/vim-jsx.git
 Plugin 'mxw/vim-jsx'
 
 " syntax
 Plugin 'groenewege/vim-less'
+Plugin 'digitaltoad/vim-pug'              " jade/pug
+Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
+Plugin 'groovy.vim'                       " groovy
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
-"Plugin 'https://github.com/scrooloose/syntastic.git'
+"Plugin 'scrooloose/syntastic'
+
 " autocomplete
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 
 "Plugin 'ruby.vim'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'gavocanov/vim-js-indent'
+"Plugin 'Shougo/unite.vim'
+Plugin 'wincent/command-t'
 " Plugin 'Lokaltog/vim-powerline'
+" Plugin 'vim-airline/vim-airline'
 "Plugin 'SuperTab-continued.'
 "Plugin 'fugitive.vim'
 "Plugin 'rails.vim'
 "Plugin 'AutoClose'
 "Plugin 'cpp.vim'
 "Plugin 'snippetsEmu'
-"Plugin 'https://github.com/myhere/vim-nodejs-complete'
 
 " Plugin 'kylef/apiblueprint.vim'
 " Plugin 'vim-scripts/logstash.vim'
@@ -92,6 +94,7 @@ set nowrap     " niezwijaj linii
 set showmatch  " pokazuja matchujace nawiasy
 "set smarttab - moze uzyc
 set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
+set backspace=2 " dzialaj backaspace!
 
 set showcmd " ???
 set hlsearch " zaznaczanie w szukajce
@@ -104,7 +107,7 @@ set fileencodings=utf-8,latin2
 ""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
 ""set foldminlines=2
 ""set foldnestmax=10
-""set foldlevel=1 
+""set foldlevel=1
 " visualbell
 set visualbell
 " totaly disabled :-)
@@ -114,7 +117,7 @@ set cc=120
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
 
-set wildmenu " pokazanie (bash-like) przy tab 
+set wildmenu " pokazanie (bash-like) przy tab
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Backups
@@ -149,12 +152,13 @@ nmap <silent> <C-N> :silent noh<CR>
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-"
+
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_aggregate_errors = 1
 "let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['standard']
+"let g:syntastic_javascript_checkers = ['standard', 'eslint', 'jshint']
 
 " JSDoc plugin
 let g:jsdoc_allow_input_prompt = 1
@@ -178,6 +182,13 @@ endif
 "let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
 " disable default mapping
 let g:goldenview__enable_default_mapping = 0
+
+" Section AutoGroups {{{
+augroup configgroup
+    autocmd!
+    autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
+augroup END
+" }}}
 
 set exrc
 set secure
