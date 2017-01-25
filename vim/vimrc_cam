@@ -29,7 +29,6 @@ Plugin 'zhaocai/GoldenView.Vim'
 " wyrownywanie
 Plugin 'godlygeek/tabular'
 
-"Plugin 'surround.vim'
 "Plugin 'SuperTab'
 
 " Javascript
@@ -53,9 +52,13 @@ Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-pug'              " jade/pug
 Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
 Plugin 'groovy.vim'                       " groovy
+Plugin 'kergoth/vim-bitbake'              " bitbake files
+Plugin 'mfukar/robotframework-vim'        " robot
+Plugin 'robbles/logstash.vim'             " logstash
+Plugin 'plasticboy/vim-markdown'          " *.md
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
-"Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic
 
 " autocomplete
 Plugin 'Valloric/YouCompleteMe'
@@ -66,7 +69,9 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'gavocanov/vim-js-indent'
 "Plugin 'Shougo/unite.vim'
-Plugin 'wincent/command-t'
+"Plugin 'wincent/command-t'
+Plugin 'ctrlp.vim'
+Plugin 'surround.vim'
 " Plugin 'Lokaltog/vim-powerline'
 " Plugin 'vim-airline/vim-airline'
 "Plugin 'SuperTab-continued.'
@@ -84,21 +89,21 @@ call vundle#end()
 filetype plugin indent on " rozpoznawanie typow plikow
 syntax on                 " kolorowanie skladni
 
-set expandtab  " soft-tab
-set ts=4       " szerokosc tabulacji :)
-set sw=4       " szerokosc automagicznego wciecia
-set autoindent " automatyczne wciecia
-set ruler      " pozycja kursora
-set number     " numerowanie wierszy
-set nowrap     " niezwijaj linii
-set showmatch  " pokazuja matchujace nawiasy
-"set smarttab - moze uzyc
-set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
-set backspace=2 " dzialaj backaspace!
+set expandtab             " soft-tab
+set ts=4                  " szerokosc tabulacji :)
+set sw=4                  " szerokosc automagicznego wciecia
+set autoindent            " automatyczne wciecia
+set ruler                 " pozycja kursora
+set number                " numerowanie wierszy
+set nowrap                " niezwijaj linii
+set showmatch             " pokazuja matchujace nawiasy
+" set smarttab - moze uzyc
+set cursorline            " pokazuj zaznaczenie linii - woleeeeee w MacVim
+set backspace=2           " dzialaj backaspace!
 
-set showcmd " ???
-set hlsearch " zaznaczanie w szukajce
-set laststatus=2 " pokazuj linie ze statusem
+set showcmd               " ???
+set hlsearch              " zaznaczanie w szukajce
+set laststatus=2          " pokazuj linie ze statusem
 
 " kodowanie
 set fileencodings=utf-8,latin2
@@ -172,6 +177,9 @@ let g:vim_json_syntax_conceal = 0
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+
 " ag z ack
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
@@ -192,3 +200,8 @@ augroup END
 
 set exrc
 set secure
+
+" przemapuj ESC
+:imap jk <Esc>
+:imap jj <Esc>
+
