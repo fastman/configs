@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jellybeans.vim'
 Plugin 'twilight'
 Plugin 'morhetz/gruvbox'
+Plugin 'PapayaWhip'
 
 " git
 Plugin 'airblade/vim-gitgutter'
@@ -41,7 +42,7 @@ Plugin 'elzr/vim-json'
 Plugin 'heavenshell/vim-jsdoc'
 
 " smutne pluginy :<
-" Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Plugin 'isRuslan/vim-es6'
 
 " mxw/vim-jsx.git
@@ -56,6 +57,8 @@ Plugin 'kergoth/vim-bitbake'              " bitbake files
 Plugin 'mfukar/robotframework-vim'        " robot
 Plugin 'robbles/logstash.vim'             " logstash
 Plugin 'plasticboy/vim-markdown'          " *.md
+Plugin 'tfnico/vim-gradle'                " Gradle - Java
+"Plugin 'flowtype/vim-flow'                " *.flow z fb
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
 "Plugin 'scrooloose/syntastic
@@ -70,7 +73,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'gavocanov/vim-js-indent'
 "Plugin 'Shougo/unite.vim'
 "Plugin 'wincent/command-t'
-Plugin 'ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'surround.vim'
 " Plugin 'Lokaltog/vim-powerline'
 " Plugin 'vim-airline/vim-airline'
@@ -83,6 +86,8 @@ Plugin 'surround.vim'
 
 " Plugin 'kylef/apiblueprint.vim'
 " Plugin 'vim-scripts/logstash.vim'
+
+Plugin 'dodie/vim-disapprove-deep-indentation'
 
 call vundle#end()
 
@@ -203,5 +208,8 @@ set secure
 
 " przemapuj ESC
 :imap jk <Esc>
-:imap jj <Esc>
 
+" zmiana polecenia ctrlp
+let g:ctrlp_cmd = 'CtrlPMixed'
+" przenos do okna
+let g:ctrlp_switch_buffer = 'et'
