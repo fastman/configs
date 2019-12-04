@@ -13,10 +13,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jellybeans.vim'
 Plugin 'twilight'
 Plugin 'morhetz/gruvbox'
-Plugin 'PapayaWhip'
+"Plugin 'PapayaWhip'
+Plugin 'mhartington/oceanic-next'
 
 " git
 Plugin 'airblade/vim-gitgutter'
+Plugin 'fmoralesc/vim-autogit'
 
 " boxy
 Plugin 'mileszs/ack.vim'
@@ -58,6 +60,7 @@ Plugin 'mfukar/robotframework-vim'        " robot
 Plugin 'robbles/logstash.vim'             " logstash
 Plugin 'plasticboy/vim-markdown'          " *.md
 Plugin 'tfnico/vim-gradle'                " Gradle - Java
+Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'flowtype/vim-flow'                " *.flow z fb
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
