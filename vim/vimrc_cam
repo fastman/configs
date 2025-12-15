@@ -13,8 +13,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jellybeans.vim'
 Plugin 'twilight'
 Plugin 'morhetz/gruvbox'
+Plugin 'catppuccin/vim'
 "Plugin 'PapayaWhip'
 Plugin 'mhartington/oceanic-next'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " git
 Plugin 'airblade/vim-gitgutter'
@@ -51,15 +53,18 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 
 " syntax
+Plugin 'pearofducks/ansible-vim'          " ansible playbook/jinja formatter 
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-pug'              " jade/pug
 Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
-Plugin 'groovy.vim'                       " groovy
+"Plugin 'groovy.vim' " groovy
+Plugin 'itkq/fluentd-vim'                 " fluentd config
 Plugin 'kergoth/vim-bitbake'              " bitbake files
 Plugin 'mfukar/robotframework-vim'        " robot
 Plugin 'robbles/logstash.vim'             " logstash
 Plugin 'plasticboy/vim-markdown'          " *.md
-Plugin 'tfnico/vim-gradle'                " Gradle - Java
+Plugin 'hashivim/vim-terraform'           " terraform
+"Plugin 'tfnico/vim-gradle'                " Gradle - Java
 Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'flowtype/vim-flow'                " *.flow z fb
 "" Plugin 'ada.vim'
@@ -67,8 +72,9 @@ Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'scrooloose/syntastic
 
 " autocomplete
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
+"Plugin 'codota/tabnine-vim'
 
 "Plugin 'ruby.vim'
 
@@ -79,7 +85,8 @@ Plugin 'gavocanov/vim-js-indent'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'surround.vim'
 " Plugin 'Lokaltog/vim-powerline'
-" Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'SuperTab-continued.'
 "Plugin 'fugitive.vim'
 "Plugin 'rails.vim'
@@ -91,6 +98,14 @@ Plugin 'surround.vim'
 " Plugin 'vim-scripts/logstash.vim'
 
 Plugin 'dodie/vim-disapprove-deep-indentation'
+" auto license date bump
+Plugin 'inkarkat/vim-ingo-library'
+Plugin 'inkarkat/vim-AutoAdapt'
+" spell check
+" Plugin 'rhysd/vim-grammarous'
+"
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
 
 call vundle#end()
 
@@ -188,9 +203,23 @@ let g:NERDTreeDirArrowCollapsible = '▼'
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 
+" Konfiguracja kolorow
+let g:jellybeans_use_lowcolor_black = 0
+
+" YCM + tagi
+let g:ycm_collect_identifiers_from_tags_files = 1
+" zamknij okno z podpowiedziami
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " ag z ack
 if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
+endif
+
+" dodatkowe kolory
+if exists('$TERM') && $TERM ==# 'tmux-256color'
+    set termguicolors
+    colorscheme catppuccin_mocha
 endif
 
 " golden ration nie rusza tagbar i nerdtree
