@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'jellybeans.vim'
 Plugin 'twilight'
 Plugin 'morhetz/gruvbox'
-Plugin 'catppuccin/vim'
+Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
 "Plugin 'PapayaWhip'
 Plugin 'mhartington/oceanic-next'
 Plugin 'dracula/vim', { 'name': 'dracula' }
@@ -36,6 +36,9 @@ Plugin 'godlygeek/tabular'
 
 "Plugin 'SuperTab'
 
+" komentowanie
+Plugin 'preservim/nerdcommenter'
+
 " Javascript
 Plugin 'othree/yajs.vim'
 
@@ -53,7 +56,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 
 " syntax
-Plugin 'pearofducks/ansible-vim'          " ansible playbook/jinja formatter 
+Plugin 'pearofducks/ansible-vim'          " ansible playbook/jinja formatter
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-pug'              " jade/pug
 Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
@@ -217,9 +220,11 @@ if executable('ag')
 endif
 
 " dodatkowe kolory
-if exists('$TERM') && $TERM ==# 'tmux-256color'
+if exists('$TERM') && $TERM ==# 'screen-256color'
     set termguicolors
     colorscheme catppuccin_mocha
+"    let g:airline_theme = 'catppuccin_mocha'
+    let g:airline_theme = 'catppuccin_macchiato'
 endif
 
 " golden ration nie rusza tagbar i nerdtree
@@ -245,3 +250,13 @@ set secure
 let g:ctrlp_cmd = 'CtrlPMixed'
 " przenos do okna
 let g:ctrlp_switch_buffer = 'et'
+
+""" nerdcommenter
+" Add spaces after comment delimiters by default - odstęp po komentarzu
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
