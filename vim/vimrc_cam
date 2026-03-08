@@ -10,12 +10,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " kolorki
-Plugin 'jellybeans.vim'
+Plugin 'nanotech/jellybeans.vim'      " colorscheme: jellybeans
 Plugin 'twilight'
 Plugin 'morhetz/gruvbox'
 Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
 "Plugin 'PapayaWhip'
-Plugin 'mhartington/oceanic-next'
+Plugin 'mhartington/oceanic-next'     " colorscheme: oceanic-next
 Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " git
@@ -24,10 +24,10 @@ Plugin 'fmoralesc/vim-autogit'
 
 " boxy
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'           " file tree explorer sidebar
 "Plugin 'nerdtree-ack'
 "Plugin 'NERD_Tree-and-ack'
-Plugin 'majutsushi/tagbar'
+Plugin 'preservim/tagbar'             " symbols/tags outline window
 "Plugin 'roman/golden-ratio'
 Plugin 'zhaocai/GoldenView.Vim'
 
@@ -64,7 +64,7 @@ Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
 Plugin 'itkq/fluentd-vim'                 " fluentd config
 Plugin 'kergoth/vim-bitbake'              " bitbake files
 Plugin 'mfukar/robotframework-vim'        " robot
-Plugin 'robbles/logstash.vim'             " logstash
+Plugin 'robbles/logstash.vim'         " syntax: logstash config
 Plugin 'plasticboy/vim-markdown'          " *.md
 Plugin 'hashivim/vim-terraform'           " terraform
 "Plugin 'tfnico/vim-gradle'                " Gradle - Java
@@ -86,7 +86,7 @@ Plugin 'gavocanov/vim-js-indent'
 "Plugin 'Shougo/unite.vim'
 "Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'surround.vim'
+Plugin 'tpope/vim-surround'           " add/change/delete surrounds
 " Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
