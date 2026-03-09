@@ -21,9 +21,11 @@ Plugin 'nordtheme/vim'                " colorscheme: nord
 
 " git
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'           " Git integration (status/blame)
 
-" boxy
+" boxy / nawigacja / szukanie
 Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'preservim/nerdtree'           " file tree explorer sidebar
 Plugin 'preservim/tagbar'             " symbols/tags outline window
 "Plugin 'roman/golden-ratio'
@@ -31,11 +33,11 @@ Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" wyrownywanie
+" wyrownywanie / edycja
 Plugin 'godlygeek/tabular'
-
 Plugin 'tpope/vim-surround'           " add/change/delete surrounds
 Plugin 'ervandew/supertab'            " Tab-triggered insert completion
+"Plugin 'AutoClose'
 
 " autocomplete
 Plugin 'ycm-core/YouCompleteMe'
@@ -46,32 +48,20 @@ Plugin 'pangloss/vim-javascript' " javascript
 Plugin 'elzr/vim-json'           " JSON
 Plugin 'saltstack/salt-vim'      " saltstack
 Plugin 'pearofducks/ansible-vim' " ansible
-
-" smutne pluginy :<
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'isRuslan/vim-es6'
-
 Plugin 'digitaltoad/vim-pug' " jade/pug markup
-Plugin 'mxw/vim-jsx'         " JSX
-
+Plugin 'MaxMEllon/vim-jsx-pretty' " JSX
+Plugin 'robbles/logstash.vim'         " syntax: logstash config
+"Plugin 'ap/vim-css-color'
 "" Plugin 'ada.vim'
 "Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
 
+" framework / domain
 Plugin 'exu/pgsql.vim'     " pgsql
 Plugin 'vim-ruby/vim-ruby' " ruby
-
-Plugin 'ctrlpvim/ctrlp.vim'
-
-Plugin 'tpope/vim-fugitive'           " Git integration (status/blame)
 Plugin 'tpope/vim-rails' " rails
-"Plugin 'AutoClose'
-"Plugin 'cpp.vim'
-"Plugin 'snippetsEmu'
-"Plugin 'https://github.com/myhere/vim-nodejs-complete'
 
 Plugin 'kylef/apiblueprint.vim'
-Plugin 'robbles/logstash.vim'         " syntax: logstash config
-"Plugin 'ap/vim-css-color'
 
 call vundle#end()
 
@@ -126,22 +116,15 @@ colorscheme jellybeans " kolorki :]
 " magiczne aliasy sobie porobilem dla zwijania :)
 "map <C-x> zo
 "map <C-z> zc
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-nmap <silent> <C-F> :NERDTreeFind<CR>
-nmap <silent> <C-N> :silent noh<CR>
+nnoremap <silent> <C-D> :NERDTreeToggle<CR>
+nnoremap <silent> <C-F> :NERDTreeFind<CR>
+nnoremap <silent> <C-N> :silent noh<CR>
 "noremap <C-M> :set hlsearch! hlsearch?<CR> - sciągnąc z pracy
 
 "autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 "autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
-"let g:html_indent_inctags = "html,body,head,tbody"
-"let g:html_indent_script1 = "inc"
-"let g:html_indentsmarttab_style1 = "inc"
-"
-"let g:golden_ratio_exclude_nonmodifiable = 1
-
 
 " Plugins config {{{
 
