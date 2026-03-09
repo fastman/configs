@@ -7,95 +7,90 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'                            " plugin manager
 
 " kolorki
-Plugin 'nanotech/jellybeans.vim'      " colorscheme: jellybeans
-Plugin 'twilight'
-Plugin 'morhetz/gruvbox'
-Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
-"Plugin 'PapayaWhip'
-Plugin 'mhartington/oceanic-next'     " colorscheme: oceanic-next
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'nanotech/jellybeans.vim'                         " colorscheme: jellybeans
+Plugin 'twilight'                                        " colorscheme: twilight (legacy)
+Plugin 'morhetz/gruvbox'                                 " colorscheme: gruvbox
+Plugin 'catppuccin/vim', { 'name': 'catppuccin' }        " colorscheme: catppuccin
+"Plugin 'PapayaWhip'                                     " colorscheme: papayawhip
+Plugin 'mhartington/oceanic-next'                        " colorscheme: oceanic-next
+Plugin 'dracula/vim', { 'name': 'dracula' }              " colorscheme: dracula
 
 " git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'fmoralesc/vim-autogit'
-"Plugin 'fugitive.vim'
+Plugin 'airblade/vim-gitgutter'                          " git diff signs in gutter
+Plugin 'fmoralesc/vim-autogit'                           " auto-commit helper
+"Plugin 'fugitive.vim'                                   " Git integration commands
 
 " boxy / nawigacja / szukanie
-Plugin 'mileszs/ack.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'preservim/nerdtree'           " file tree explorer sidebar
-"Plugin 'nerdtree-ack'
-"Plugin 'NERD_Tree-and-ack'
-Plugin 'preservim/tagbar'             " symbols/tags outline window
-"Plugin 'roman/golden-ratio'
-Plugin 'zhaocai/GoldenView.Vim'
-"Plugin 'Shougo/unite.vim'
-"Plugin 'wincent/command-t'
-" Plugin 'Lokaltog/vim-powerline'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mileszs/ack.vim'                                 " project text search
+Plugin 'ctrlpvim/ctrlp.vim'                              " fuzzy file/buffer finder
+Plugin 'preservim/nerdtree'                              " file tree explorer sidebar
+"Plugin 'nerdtree-ack'                                   " search results in NERDTree
+"Plugin 'NERD_Tree-and-ack'                              " NERDTree + ack integration
+Plugin 'preservim/tagbar'                                " symbols/tags outline window
+"Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
+Plugin 'zhaocai/GoldenView.Vim'                          " auto-balance split windows
+"Plugin 'Shougo/unite.vim'                               " generic search/interface
+"Plugin 'wincent/command-t'                              " fast file finder (native)
+"Plugin 'Lokaltog/vim-powerline'                         " legacy statusline
+Plugin 'vim-airline/vim-airline'                         " status/tabline UI
+Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 
 " wyrownywanie / edycja
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-surround'           " add/change/delete surrounds
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'gavocanov/vim-js-indent'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'dodie/vim-disapprove-deep-indentation'
-"Plugin 'SuperTab'
-"Plugin 'SuperTab-continued.'
-"Plugin 'AutoClose'
-"Plugin 'snippetsEmu'
+Plugin 'godlygeek/tabular'                               " align text by pattern
+Plugin 'tpope/vim-surround'                              " add/change/delete surrounds
+Plugin 'nathanaelkane/vim-indent-guides'                 " indent guides
+Plugin 'gavocanov/vim-js-indent'                         " JavaScript indentation tweaks
+Plugin 'kien/rainbow_parentheses.vim'                    " rainbow parentheses
+Plugin 'dodie/vim-disapprove-deep-indentation'           " highlight deep indentation
+"Plugin 'SuperTab'                                       " Tab completion (legacy)
+"Plugin 'SuperTab-continued.'                            " maintained SuperTab fork
+"Plugin 'AutoClose'                                      " auto-close brackets/quotes
+"Plugin 'snippetsEmu'                                    " snippet expansion helper
 
 " komentowanie
-Plugin 'preservim/nerdcommenter'
+Plugin 'preservim/nerdcommenter'                         " quick comment toggles
 
 " autocomplete
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-"Plugin 'codota/tabnine-vim'
+Plugin 'ycm-core/YouCompleteMe'                          " semantic code completion
 
 " syntax
-Plugin 'othree/yajs.vim'
-Plugin 'elzr/vim-json'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'kchmck/vim-coffee-script'
-" Plugin 'isRuslan/vim-es6'
-" mxw/vim-jsx.git
-Plugin 'mxw/vim-jsx'
-Plugin 'pearofducks/ansible-vim'          " ansible playbook/jinja formatter
-Plugin 'groenewege/vim-less'
-Plugin 'digitaltoad/vim-pug'              " jade/pug
-Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
-"Plugin 'groovy.vim' " groovy
-Plugin 'itkq/fluentd-vim'                 " fluentd config
-Plugin 'kergoth/vim-bitbake'              " bitbake files
-Plugin 'mfukar/robotframework-vim'        " robot
-Plugin 'robbles/logstash.vim'             " syntax: logstash config
-" Plugin 'vim-scripts/logstash.vim'
-"Plugin 'flowtype/vim-flow'                " *.flow z fb
-"Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'cpp.vim'
-"" Plugin 'ada.vim'
+Plugin 'pangloss/vim-javascript'                         " JavaScript syntax
+Plugin 'HerringtonDarkholme/yats.vim'                    " TypeScript syntax
+Plugin 'elzr/vim-json'                                   " JSON syntax and conceal control
+Plugin 'heavenshell/vim-jsdoc'                           " generate JSDoc blocks
+Plugin 'kchmck/vim-coffee-script'                        " CoffeeScript syntax
+Plugin 'MaxMEllon/vim-jsx-pretty'                        " JSX syntax
+Plugin 'pearofducks/ansible-vim'                         " Ansible playbook/Jinja syntax
+Plugin 'groenewege/vim-less'                             " LESS syntax support
+Plugin 'digitaltoad/vim-pug'                             " jade/pug syntax
+Plugin 'mustache/vim-mustache-handlebars'                " mustache/handlebars syntax
+"Plugin 'groovy.vim'                                     " Groovy syntax
+Plugin 'itkq/fluentd-vim'                                " fluentd config
+Plugin 'kergoth/vim-bitbake'                             " bitbake files
+Plugin 'mfukar/robotframework-vim'                       " Robot Framework syntax
+Plugin 'robbles/logstash.vim'                            " Logstash syntax
+"Plugin 'vim-scripts/logstash.vim'                       " legacy logstash syntax
+"Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
+"Plugin 'cpp.vim'                                        " C/C++ syntax support
+"Plugin 'ada.vim'                                        " Ada syntax support
 
 " framework / domain
-"Plugin 'ruby.vim'
-"Plugin 'rails.vim'
-" Plugin 'kylef/apiblueprint.vim'
-Plugin 'plasticboy/vim-markdown'          " *.md
-Plugin 'hashivim/vim-terraform'           " terraform
-"Plugin 'tfnico/vim-gradle'                " Gradle - Java
+"Plugin 'ruby.vim'                                       " Ruby syntax (legacy)
+"Plugin 'rails.vim'                                      " Rails helpers (legacy)
+"Plugin 'kylef/apiblueprint.vim'                         " API Blueprint syntax
+Plugin 'plasticboy/vim-markdown'                         " Markdown syntax
+Plugin 'hashivim/vim-terraform'                          " Terraform syntax
+"Plugin 'tfnico/vim-gradle'                              " Gradle syntax support
 " auto license date bump
-Plugin 'inkarkat/vim-ingo-library'
-Plugin 'inkarkat/vim-AutoAdapt'
+Plugin 'inkarkat/vim-ingo-library'                       " shared vimscript helper library
+Plugin 'inkarkat/vim-AutoAdapt'                          " auto-update date/license headers
 " spell check
-" Plugin 'rhysd/vim-grammarous'
-Plugin 'jceb/vim-orgmode'
-Plugin 'tpope/vim-speeddating'
+"Plugin 'rhysd/vim-grammarous'                           " grammar and style checker
+Plugin 'jceb/vim-orgmode'                                " Org mode editing
+Plugin 'tpope/vim-speeddating'                           " increment/decrement dates
 
 call vundle#end()
 
@@ -168,15 +163,8 @@ nmap <silent> <C-N> :silent noh<CR>
 "
 " Funky syntax highlighter
 "set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_aggregate_errors = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['standard', 'eslint', 'jshint']
 
 " JSDoc plugin
 let g:jsdoc_allow_input_prompt = 1

@@ -7,61 +7,61 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'                            " plugin manager
 
 " kolorki
-Plugin 'nanotech/jellybeans.vim'      " colorscheme: jellybeans
-Plugin 'morhetz/gruvbox'
-Plugin 'twilight'
-Plugin 'mhartington/oceanic-next'     " colorscheme: oceanic-next
-Plugin 'catppuccin/vim', { 'name': 'catppuccin' }
-Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'ghifarit53/tokyonight-vim'
-Plugin 'nordtheme/vim'                " colorscheme: nord
+Plugin 'nanotech/jellybeans.vim'                         " colorscheme: jellybeans
+Plugin 'morhetz/gruvbox'                                 " colorscheme: gruvbox
+Plugin 'twilight'                                        " colorscheme: twilight (legacy)
+Plugin 'mhartington/oceanic-next'                        " colorscheme: oceanic-next
+Plugin 'catppuccin/vim', { 'name': 'catppuccin' }        " colorscheme: catppuccin
+Plugin 'dracula/vim', { 'name': 'dracula' }              " colorscheme: dracula
+Plugin 'ghifarit53/tokyonight-vim'                       " colorscheme: tokyonight fork
+Plugin 'nordtheme/vim'                                   " colorscheme: nord
 
 " git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'           " Git integration (status/blame)
+Plugin 'airblade/vim-gitgutter'                          " git diff signs in gutter
+Plugin 'tpope/vim-fugitive'                              " Git integration (status/blame)
 
 " boxy / nawigacja / szukanie
-Plugin 'mileszs/ack.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'preservim/nerdtree'           " file tree explorer sidebar
-Plugin 'preservim/tagbar'             " symbols/tags outline window
-"Plugin 'roman/golden-ratio'
-Plugin 'zhaocai/GoldenView.Vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mileszs/ack.vim'                                 " project text search
+Plugin 'ctrlpvim/ctrlp.vim'                              " fuzzy file/buffer finder
+Plugin 'preservim/nerdtree'                              " file tree explorer sidebar
+Plugin 'preservim/tagbar'                                " symbols/tags outline window
+"Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
+Plugin 'zhaocai/GoldenView.Vim'                          " auto-balance split windows
+Plugin 'vim-airline/vim-airline'                         " status/tabline UI
+Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 
 " wyrownywanie / edycja
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-surround'           " add/change/delete surrounds
-Plugin 'ervandew/supertab'            " Tab-triggered insert completion
-"Plugin 'AutoClose'
+Plugin 'godlygeek/tabular'                               " align text by pattern
+Plugin 'tpope/vim-surround'                              " add/change/delete surrounds
+Plugin 'ervandew/supertab'                               " Tab-triggered insert completion
+"Plugin 'AutoClose'                                      " auto-close brackets/quotes
 
 " autocomplete
-Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'rdnetto/YCM-Generator'
+Plugin 'ycm-core/YouCompleteMe'                          " semantic code completion
 
 " syntax
-Plugin 'pangloss/vim-javascript' " javascript
-Plugin 'elzr/vim-json'           " JSON
-Plugin 'saltstack/salt-vim'      " saltstack
-Plugin 'pearofducks/ansible-vim' " ansible
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-pug' " jade/pug markup
-Plugin 'MaxMEllon/vim-jsx-pretty' " JSX
-Plugin 'robbles/logstash.vim'         " syntax: logstash config
-"Plugin 'ap/vim-css-color'
-"" Plugin 'ada.vim'
-"Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
+Plugin 'pangloss/vim-javascript'                         " JavaScript syntax
+Plugin 'HerringtonDarkholme/yats.vim'                    " TypeScript syntax
+Plugin 'elzr/vim-json'                                   " JSON syntax
+Plugin 'saltstack/salt-vim'                              " SaltStack syntax
+Plugin 'pearofducks/ansible-vim'                         " Ansible syntax
+Plugin 'kchmck/vim-coffee-script'                        " CoffeeScript syntax
+Plugin 'digitaltoad/vim-pug'                             " jade/pug markup
+Plugin 'MaxMEllon/vim-jsx-pretty'                        " JSX syntax
+Plugin 'robbles/logstash.vim'                            " Logstash syntax
+"Plugin 'ap/vim-css-color'                               " preview CSS colors inline
+"Plugin 'ada.vim'                                        " Ada syntax support
+"Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
 
 " framework / domain
-Plugin 'exu/pgsql.vim'     " pgsql
-Plugin 'vim-ruby/vim-ruby' " ruby
-Plugin 'tpope/vim-rails' " rails
+Plugin 'exu/pgsql.vim'                                   " PostgreSQL SQL syntax
+Plugin 'vim-ruby/vim-ruby'                               " Ruby syntax and indent
+Plugin 'tpope/vim-rails'                                 " Rails helpers
 
-Plugin 'kylef/apiblueprint.vim'
+Plugin 'kylef/apiblueprint.vim'                          " API Blueprint syntax
 
 call vundle#end()
 
