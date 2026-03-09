@@ -186,8 +186,17 @@ let g:jellybeans_use_lowcolor_black = 0
 
 " YCM + tagi
 let g:ycm_collect_identifiers_from_tags_files = 1
+" YCM config
+let $PATH = expand("~/.nvm/versions/node/v24.11.1/bin") . ":" . $PATH
 " zamknij okno z podpowiedziami
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_show_diagnostics_ui = 1
+nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+"nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
+nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
+nnoremap <leader>f  :YcmCompleter FixIt<CR>
+nnoremap <leader>d  :YcmDiags<CR>
 
 " ag z ack
 if executable('ag')
@@ -198,8 +207,16 @@ endif
 if exists('$TERM') && $TERM ==# 'screen-256color'
     set termguicolors
     colorscheme catppuccin_mocha
-"    let g:airline_theme = 'catppuccin_mocha'
-    let g:airline_theme = 'catppuccin_macchiato'
+
+    " --- Force near-black background ---
+    hi Normal       guibg=#12121a guifg=#cdd6f4 ctermbg=0 ctermfg=15
+    hi LineNr       guibg=#12121a guifg=#5c6773
+    hi CursorLine   guibg=#1e1e2e
+    hi StatusLine   guibg=#12121a guifg=#cdd6f4
+    hi VertSplit    guibg=#12121a guifg=#313244
+    hi Pmenu        guibg=#12121a guifg=#ffffff
+    hi PmenuSel     guibg=#2a2c3c guifg=#ffffff
+    hi Folded       guibg=#12121a guifg=#7f849c
 endif
 
 " golden ration nie rusza tagbar i nerdtree
@@ -219,7 +236,7 @@ set exrc
 set secure
 
 " przemapuj ESC
-:imap jk <Esc>
+inoremap jk <Esc>
 
 " zmiana polecenia ctrlp
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -235,3 +252,5 @@ let g:NERDCompactSexyComs = 1
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+
+set conceallevel=0

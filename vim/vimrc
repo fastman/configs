@@ -168,4 +168,5 @@ if exists('$TERM') && ($TERM ==# 'tmux-256color' || $TERM ==# 'screen-256color')
     colorscheme catppuccin_mocha
 endif
 
-imap jk <Esc>
+" przemapuj ESC
+inoremap jk <Esc>
