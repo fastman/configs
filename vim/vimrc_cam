@@ -21,41 +21,51 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 " git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fmoralesc/vim-autogit'
+"Plugin 'fugitive.vim'
 
-" boxy
+" boxy / nawigacja / szukanie
 Plugin 'mileszs/ack.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'preservim/nerdtree'           " file tree explorer sidebar
 "Plugin 'nerdtree-ack'
 "Plugin 'NERD_Tree-and-ack'
 Plugin 'preservim/tagbar'             " symbols/tags outline window
 "Plugin 'roman/golden-ratio'
 Plugin 'zhaocai/GoldenView.Vim'
+"Plugin 'Shougo/unite.vim'
+"Plugin 'wincent/command-t'
+" Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-" wyrownywanie
+" wyrownywanie / edycja
 Plugin 'godlygeek/tabular'
-
+Plugin 'tpope/vim-surround'           " add/change/delete surrounds
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'dodie/vim-disapprove-deep-indentation'
 "Plugin 'SuperTab'
+"Plugin 'SuperTab-continued.'
+"Plugin 'AutoClose'
+"Plugin 'snippetsEmu'
 
 " komentowanie
 Plugin 'preservim/nerdcommenter'
 
-" Javascript
-Plugin 'othree/yajs.vim'
-
-" JSON
-Plugin 'elzr/vim-json'
-
-" JSDoc
-Plugin 'heavenshell/vim-jsdoc'
-
-" smutne pluginy :<
-Plugin 'kchmck/vim-coffee-script'
-" Plugin 'isRuslan/vim-es6'
-
-" mxw/vim-jsx.git
-Plugin 'mxw/vim-jsx'
+" autocomplete
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+"Plugin 'codota/tabnine-vim'
 
 " syntax
+Plugin 'othree/yajs.vim'
+Plugin 'elzr/vim-json'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'kchmck/vim-coffee-script'
+" Plugin 'isRuslan/vim-es6'
+" mxw/vim-jsx.git
+Plugin 'mxw/vim-jsx'
 Plugin 'pearofducks/ansible-vim'          " ansible playbook/jinja formatter
 Plugin 'groenewege/vim-less'
 Plugin 'digitaltoad/vim-pug'              " jade/pug
@@ -64,49 +74,26 @@ Plugin 'mustache/vim-mustache-handlebars' " mustache/handlebars
 Plugin 'itkq/fluentd-vim'                 " fluentd config
 Plugin 'kergoth/vim-bitbake'              " bitbake files
 Plugin 'mfukar/robotframework-vim'        " robot
-Plugin 'robbles/logstash.vim'         " syntax: logstash config
+Plugin 'robbles/logstash.vim'             " syntax: logstash config
+" Plugin 'vim-scripts/logstash.vim'
+"Plugin 'flowtype/vim-flow'                " *.flow z fb
+"Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'cpp.vim'
+"" Plugin 'ada.vim'
+
+" framework / domain
+"Plugin 'ruby.vim'
+"Plugin 'rails.vim'
+" Plugin 'kylef/apiblueprint.vim'
 Plugin 'plasticboy/vim-markdown'          " *.md
 Plugin 'hashivim/vim-terraform'           " terraform
 "Plugin 'tfnico/vim-gradle'                " Gradle - Java
-Plugin 'kien/rainbow_parentheses.vim'
-"Plugin 'flowtype/vim-flow'                " *.flow z fb
-"" Plugin 'ada.vim'
-"Plugin 'https://github.com/puppetlabs/puppet-syntax-vim'
-"Plugin 'scrooloose/syntastic
-
-" autocomplete
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-"Plugin 'codota/tabnine-vim'
-
-"Plugin 'ruby.vim'
-
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'gavocanov/vim-js-indent'
-"Plugin 'Shougo/unite.vim'
-"Plugin 'wincent/command-t'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'           " add/change/delete surrounds
-" Plugin 'Lokaltog/vim-powerline'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'SuperTab-continued.'
-"Plugin 'fugitive.vim'
-"Plugin 'rails.vim'
-"Plugin 'AutoClose'
-"Plugin 'cpp.vim'
-"Plugin 'snippetsEmu'
-
-" Plugin 'kylef/apiblueprint.vim'
-" Plugin 'vim-scripts/logstash.vim'
-
-Plugin 'dodie/vim-disapprove-deep-indentation'
 " auto license date bump
 Plugin 'inkarkat/vim-ingo-library'
 Plugin 'inkarkat/vim-AutoAdapt'
 " spell check
 " Plugin 'rhysd/vim-grammarous'
-"
 Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
 
