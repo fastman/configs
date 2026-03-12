@@ -44,17 +44,7 @@ if &term =~# 'tmux-256color\|screen-256color'
     colorscheme catppuccin_mocha
 endif
 
-if exists('g:colors_name') && g:colors_name ==# 'catppuccin_mocha'
-    " --- Force near-black background ---
-    " hi Normal       guibg=#12121a guifg=#cdd6f4 ctermbg=0 ctermfg=15
-    " hi LineNr       guibg=#12121a guifg=#5c6773
-    " hi CursorLine   guibg=#1e1e2e
-    " hi StatusLine   guibg=#12121a guifg=#cdd6f4
-    " hi VertSplit    guibg=#12121a guifg=#313244
-    " hi Pmenu        guibg=#12121a guifg=#ffffff
-    " hi PmenuSel     guibg=#2a2c3c guifg=#ffffff
-    " hi Folded       guibg=#12121a guifg=#7f849c
-endif
+execute 'source ' . fnameescape(expand('<sfile>:p:h') . '/contrast_toggle.vim')
 
 " disable concealing in JSON files
 let g:vim_json_syntax_conceal = 0
@@ -91,6 +81,7 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
 nnoremap <leader>f  :YcmCompleter FixIt<CR>
 nnoremap <leader>d  :YcmDiags<CR>
+nnoremap <leader>tc :ContrastToggle<CR>
 
 " przemapuj ESC
 inoremap jk <Esc>
