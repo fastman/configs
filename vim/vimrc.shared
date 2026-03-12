@@ -1,0 +1,128 @@
+syntax on                 " kolorowanie skladni
+filetype plugin indent on " rozpoznawanie typow plikow
+
+set expandtab  " soft-tab
+set autoindent " automatyczne wciecia
+set ruler      " pozycja kursora
+set number     " numerowanie wierszy
+set nowrap     " niezwijaj linii
+set showmatch  " pokazuja matchujace nawiasy
+set cursorline " pokazuj zaznaczenie linii
+set showcmd " ???
+set hlsearch " zaznaczanie w szukajce
+set laststatus=2 " pokazuj linie ze statusem
+set signcolumn=yes
+set conceallevel=0
+
+" kodowanie
+set fileencodings=utf-8,latin2
+
+set visualbell
+set cc=120
+
+set wildmenu " pokazanie (bash-like) przy tab
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+""set foldmethod=indent
+""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
+""set foldminlines=2
+""set foldnestmax=10
+""set foldlevel=1
+
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
+
+" colorscheme elflord " kolorki :]
+" colorscheme desesmarttabrt " kolorki :]
+" colorscheme eclipse " kolorki :]
+" colorscheme zmrok " kolorki :]
+colorscheme jellybeans " kolorki :]
+
+" dodatkowe kolory
+if &term =~# 'tmux-256color\|screen-256color'
+    set termguicolors
+    colorscheme catppuccin_mocha
+endif
+
+if exists('g:colors_name') && g:colors_name ==# 'catppuccin_mocha'
+    " --- Force near-black background ---
+    " hi Normal       guibg=#12121a guifg=#cdd6f4 ctermbg=0 ctermfg=15
+    " hi LineNr       guibg=#12121a guifg=#5c6773
+    " hi CursorLine   guibg=#1e1e2e
+    " hi StatusLine   guibg=#12121a guifg=#cdd6f4
+    " hi VertSplit    guibg=#12121a guifg=#313244
+    " hi Pmenu        guibg=#12121a guifg=#ffffff
+    " hi PmenuSel     guibg=#2a2c3c guifg=#ffffff
+    " hi Folded       guibg=#12121a guifg=#7f849c
+endif
+
+" disable concealing in JSON files
+let g:vim_json_syntax_conceal = 0
+
+" disable default mapping
+let g:goldenview__enable_default_mapping = 0
+
+" ag z ack
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
+endif
+
+" CtrlP
+" zmiana polecenia ctrlp
+let g:ctrlp_cmd = 'CtrlPMixed'
+" przenos do okna
+let g:ctrlp_switch_buffer = 'et'
+
+" NERDTree
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+
+" YCM config
+let $PATH = expand("~/.nvm/versions/node/v24.11.1/bin") . ":" . $PATH
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_show_diagnostics_ui = 1
+nnoremap <silent> <C-D> :NERDTreeToggle<CR>
+nnoremap <silent> <C-F> :NERDTreeFind<CR>
+nnoremap <silent> <C-N> :silent noh<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+"nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
+nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
+nnoremap <leader>f  :YcmCompleter FixIt<CR>
+nnoremap <leader>d  :YcmDiags<CR>
+
+" przemapuj ESC
+inoremap jk <Esc>
+
+" magiczne aliasy sobie porobilem dla zwijania :)
+"map <C-x> zo
+"map <C-z> zc
+"noremap <C-M> :set hlsearch! hlsearch?<CR> - sciągnąc z pracy
+
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+""" nerdcommenter
+" Add spaces after comment delimiters by default - odstęp po komentarzu
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" indent-guides
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+" JSDoc plugin
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_enable_es6 = 1
+let g:jsdoc_underscore_private = 1
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1

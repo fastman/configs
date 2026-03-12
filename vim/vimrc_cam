@@ -6,72 +6,31 @@ set nocompatible    " hmm ? :)
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+let s:cfg_dir = fnamemodify(resolve(expand($MYVIMRC)), ':h')
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'                            " plugin manager
+execute 'source ' . fnameescape(s:cfg_dir . '/plugins.shared.vim')
 
 " kolorki
-Plugin 'nanotech/jellybeans.vim'                         " colorscheme: jellybeans
-Plugin 'twilight'                                        " colorscheme: twilight (legacy)
-Plugin 'morhetz/gruvbox'                                 " colorscheme: gruvbox
-Plugin 'catppuccin/vim', { 'name': 'catppuccin' }        " colorscheme: catppuccin
 "Plugin 'PapayaWhip'                                     " colorscheme: papayawhip
-Plugin 'mhartington/oceanic-next'                        " colorscheme: oceanic-next
-Plugin 'dracula/vim', { 'name': 'dracula' }              " colorscheme: dracula
-
-" git
-Plugin 'airblade/vim-gitgutter'                          " git diff signs in gutter
-Plugin 'fmoralesc/vim-autogit'                           " auto-commit helper
-"Plugin 'fugitive.vim'                                   " Git integration commands
 
 " boxy / nawigacja / szukanie
-Plugin 'mileszs/ack.vim'                                 " project text search
-Plugin 'ctrlpvim/ctrlp.vim'                              " fuzzy file/buffer finder
-Plugin 'preservim/nerdtree'                              " file tree explorer sidebar
-"Plugin 'nerdtree-ack'                                   " search results in NERDTree
-"Plugin 'NERD_Tree-and-ack'                              " NERDTree + ack integration
-Plugin 'preservim/tagbar'                                " symbols/tags outline window
 "Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
-Plugin 'zhaocai/GoldenView.Vim'                          " auto-balance split windows
-"Plugin 'Shougo/unite.vim'                               " generic search/interface
-"Plugin 'wincent/command-t'                              " fast file finder (native)
-"Plugin 'Lokaltog/vim-powerline'                         " legacy statusline
-Plugin 'vim-airline/vim-airline'                         " status/tabline UI
-Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 
 " wyrownywanie / edycja
-Plugin 'godlygeek/tabular'                               " align text by pattern
-Plugin 'tpope/vim-surround'                              " add/change/delete surrounds
-Plugin 'nathanaelkane/vim-indent-guides'                 " indent guides
-Plugin 'gavocanov/vim-js-indent'                         " JavaScript indentation tweaks
 Plugin 'kien/rainbow_parentheses.vim'                    " rainbow parentheses
 Plugin 'dodie/vim-disapprove-deep-indentation'           " highlight deep indentation
-"Plugin 'SuperTab'                                       " Tab completion (legacy)
-"Plugin 'SuperTab-continued.'                            " maintained SuperTab fork
 "Plugin 'AutoClose'                                      " auto-close brackets/quotes
 "Plugin 'snippetsEmu'                                    " snippet expansion helper
 
-" komentowanie
-Plugin 'preservim/nerdcommenter'                         " quick comment toggles
-
 " autocomplete
-Plugin 'ycm-core/YouCompleteMe'                          " semantic code completion
 
 " syntax
-Plugin 'pangloss/vim-javascript'                         " JavaScript syntax
-Plugin 'HerringtonDarkholme/yats.vim'                    " TypeScript syntax
-Plugin 'elzr/vim-json'                                   " JSON syntax and conceal control
-Plugin 'heavenshell/vim-jsdoc'                           " generate JSDoc blocks
-Plugin 'kchmck/vim-coffee-script'                        " CoffeeScript syntax
-Plugin 'MaxMEllon/vim-jsx-pretty'                        " JSX syntax
-Plugin 'pearofducks/ansible-vim'                         " Ansible playbook/Jinja syntax
 Plugin 'groenewege/vim-less'                             " LESS syntax support
-Plugin 'digitaltoad/vim-pug'                             " jade/pug syntax
 Plugin 'mustache/vim-mustache-handlebars'                " mustache/handlebars syntax
 "Plugin 'groovy.vim'                                     " Groovy syntax
 Plugin 'itkq/fluentd-vim'                                " fluentd config
 Plugin 'kergoth/vim-bitbake'                             " bitbake files
 Plugin 'mfukar/robotframework-vim'                       " Robot Framework syntax
-Plugin 'robbles/logstash.vim'                            " Logstash syntax
 "Plugin 'vim-scripts/logstash.vim'                       " legacy logstash syntax
 "Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
 "Plugin 'cpp.vim'                                        " C/C++ syntax support
@@ -81,8 +40,6 @@ Plugin 'robbles/logstash.vim'                            " Logstash syntax
 "Plugin 'ruby.vim'                                       " Ruby syntax (legacy)
 "Plugin 'rails.vim'                                      " Rails helpers (legacy)
 "Plugin 'kylef/apiblueprint.vim'                         " API Blueprint syntax
-Plugin 'plasticboy/vim-markdown'                         " Markdown syntax
-Plugin 'hashivim/vim-terraform'                          " Terraform syntax
 "Plugin 'tfnico/vim-gradle'                              " Gradle syntax support
 " auto license date bump
 Plugin 'inkarkat/vim-ingo-library'                       " shared vimscript helper library
@@ -93,67 +50,19 @@ Plugin 'jceb/vim-orgmode'                                " Org mode editing
 Plugin 'tpope/vim-speeddating'                           " increment/decrement dates
 
 call vundle#end()
+execute 'source ' . fnameescape(s:cfg_dir . '/vimrc.shared')
 
-filetype plugin indent on " rozpoznawanie typow plikow
-syntax on                 " kolorowanie skladni
-
-set expandtab             " soft-tab
 set ts=4                  " szerokosc tabulacji :)
 set sw=4                  " szerokosc automagicznego wciecia
-set autoindent            " automatyczne wciecia
-set ruler                 " pozycja kursora
-set number                " numerowanie wierszy
-set nowrap                " niezwijaj linii
-set showmatch             " pokazuja matchujace nawiasy
 " set smarttab - moze uzyc
-set cursorline            " pokazuj zaznaczenie linii - woleeeeee w MacVim
 set backspace=2           " dzialaj backaspace!
 
-set showcmd               " ???
-set hlsearch              " zaznaczanie w szukajce
-set laststatus=2          " pokazuj linie ze statusem
-
-" kodowanie
-set fileencodings=utf-8,latin2
-
-""set foldmethod=indent
-""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
-""set foldminlines=2
-""set foldnestmax=10
-""set foldlevel=1
 " visualbell
-set visualbell
 " totaly disabled :-)
 set t_vb=
 
-set cc=120
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%81v.\+/
-
-set wildmenu " pokazanie (bash-like) przy tab
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-
 " Backups
-set directory=~/.swp-vim//
-
-" colorscheme elflord " kolorki :]
-" colorscheme desesmarttabrt " kolorki :]
-" colorscheme eclipse " kolorki :]
-" colorscheme zmrok " kolorki :]
-colorscheme jellybeans " kolorki :]
-
-" magiczne aliasy sobie porobilem dla zwijania :)
-"map <C-x> zo
-"map <C-z> zc
-nmap <silent> <C-D> :NERDTreeToggle<CR>
-nmap <silent> <C-F> :NERDTreeFind<CR>
-nmap <silent> <C-N> :silent noh<CR>
-"noremap <C-M> :set hlsearch! hlsearch?<CR> - sciągnąc z pracy
-
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+set directory=~/.swp-vim/
 
 "let g:html_indent_inctags = "html,body,head,tbody"
 "let g:html_indent_script1 = "inc"
@@ -166,64 +75,17 @@ nmap <silent> <C-N> :silent noh<CR>
 "set statusline+=%*
 
 
-" JSDoc plugin
-let g:jsdoc_allow_input_prompt = 1
-let g:jsdoc_enable_es6 = 1
-let g:jsdoc_underscore_private = 1
-
 " JSON plugin
-let g:vim_json_syntax_conceal = 0
-
-" NERDTree
-let g:NERDTreeDirArrowExpandable = '►'
-let g:NERDTreeDirArrowCollapsible = '▼'
-
-" Markdown
-let g:vim_markdown_folding_disabled = 1
 
 " Konfiguracja kolorow
 let g:jellybeans_use_lowcolor_black = 0
 
 " YCM + tagi
-let g:ycm_collect_identifiers_from_tags_files = 1
-" YCM config
-let $PATH = expand("~/.nvm/versions/node/v24.11.1/bin") . ":" . $PATH
 " zamknij okno z podpowiedziami
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_show_diagnostics_ui = 1
-nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-"nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
-nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
-nnoremap <leader>f  :YcmCompleter FixIt<CR>
-nnoremap <leader>d  :YcmDiags<CR>
-
-" ag z ack
-if executable('ag')
-    let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
-endif
-
-" dodatkowe kolory
-if exists('$TERM') && $TERM ==# 'screen-256color'
-    set termguicolors
-    colorscheme catppuccin_mocha
-
-    " --- Force near-black background ---
-    hi Normal       guibg=#12121a guifg=#cdd6f4 ctermbg=0 ctermfg=15
-    hi LineNr       guibg=#12121a guifg=#5c6773
-    hi CursorLine   guibg=#1e1e2e
-    hi StatusLine   guibg=#12121a guifg=#cdd6f4
-    hi VertSplit    guibg=#12121a guifg=#313244
-    hi Pmenu        guibg=#12121a guifg=#ffffff
-    hi PmenuSel     guibg=#2a2c3c guifg=#ffffff
-    hi Folded       guibg=#12121a guifg=#7f849c
-endif
 
 " golden ration nie rusza tagbar i nerdtree
 "let g:golden_ratio_exclude_nonmodifiable = 1
 "let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
-" disable default mapping
-let g:goldenview__enable_default_mapping = 0
 
 " Section AutoGroups {{{
 augroup configgroup
@@ -234,23 +96,3 @@ augroup END
 
 set exrc
 set secure
-
-" przemapuj ESC
-inoremap jk <Esc>
-
-" zmiana polecenia ctrlp
-let g:ctrlp_cmd = 'CtrlPMixed'
-" przenos do okna
-let g:ctrlp_switch_buffer = 'et'
-
-""" nerdcommenter
-" Add spaces after comment delimiters by default - odstęp po komentarzu
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-set conceallevel=0

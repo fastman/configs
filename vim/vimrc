@@ -6,52 +6,24 @@ set nocompatible    " hmm ? :)
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+let s:cfg_dir = fnamemodify(resolve(expand($MYVIMRC)), ':h')
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'                            " plugin manager
+execute 'source ' . fnameescape(s:cfg_dir . '/plugins.shared.vim')
 
 " kolorki
-Plugin 'nanotech/jellybeans.vim'                         " colorscheme: jellybeans
-Plugin 'morhetz/gruvbox'                                 " colorscheme: gruvbox
-Plugin 'twilight'                                        " colorscheme: twilight (legacy)
-Plugin 'mhartington/oceanic-next'                        " colorscheme: oceanic-next
-Plugin 'catppuccin/vim', { 'name': 'catppuccin' }        " colorscheme: catppuccin
-Plugin 'dracula/vim', { 'name': 'dracula' }              " colorscheme: dracula
 Plugin 'ghifarit53/tokyonight-vim'                       " colorscheme: tokyonight fork
 Plugin 'nordtheme/vim'                                   " colorscheme: nord
 
-" git
-Plugin 'airblade/vim-gitgutter'                          " git diff signs in gutter
-Plugin 'tpope/vim-fugitive'                              " Git integration (status/blame)
-
 " boxy / nawigacja / szukanie
-Plugin 'mileszs/ack.vim'                                 " project text search
-Plugin 'ctrlpvim/ctrlp.vim'                              " fuzzy file/buffer finder
-Plugin 'preservim/nerdtree'                              " file tree explorer sidebar
-Plugin 'preservim/tagbar'                                " symbols/tags outline window
 "Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
-Plugin 'zhaocai/GoldenView.Vim'                          " auto-balance split windows
-Plugin 'vim-airline/vim-airline'                         " status/tabline UI
-Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 
 " wyrownywanie / edycja
-Plugin 'godlygeek/tabular'                               " align text by pattern
-Plugin 'tpope/vim-surround'                              " add/change/delete surrounds
-Plugin 'ervandew/supertab'                               " Tab-triggered insert completion
 "Plugin 'AutoClose'                                      " auto-close brackets/quotes
 
 " autocomplete
-Plugin 'ycm-core/YouCompleteMe'                          " semantic code completion
 
 " syntax
-Plugin 'pangloss/vim-javascript'                         " JavaScript syntax
-Plugin 'HerringtonDarkholme/yats.vim'                    " TypeScript syntax
-Plugin 'elzr/vim-json'                                   " JSON syntax
 Plugin 'saltstack/salt-vim'                              " SaltStack syntax
-Plugin 'pearofducks/ansible-vim'                         " Ansible syntax
-Plugin 'kchmck/vim-coffee-script'                        " CoffeeScript syntax
-Plugin 'digitaltoad/vim-pug'                             " jade/pug markup
-Plugin 'MaxMEllon/vim-jsx-pretty'                        " JSX syntax
-Plugin 'robbles/logstash.vim'                            " Logstash syntax
 "Plugin 'ap/vim-css-color'                               " preview CSS colors inline
 "Plugin 'ada.vim'                                        " Ada syntax support
 "Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
@@ -64,72 +36,20 @@ Plugin 'tpope/vim-rails'                                 " Rails helpers
 Plugin 'kylef/apiblueprint.vim'                          " API Blueprint syntax
 
 call vundle#end()
+execute 'source ' . fnameescape(s:cfg_dir . '/vimrc.shared')
 
-syntax on                 " kolorowanie skladni
-filetype plugin indent on " rozpoznawanie typow plikow
-
-set expandtab  " soft-tab
 set ts=2       " szerokosc tabulacji :)
 set sw=2       " szerokosc automagicznego wciecia
-set autoindent " automatyczne wciecia
-set ruler      " pozycja kursora
-set number     " numerowanie wierszy
-set nowrap     " niezwijaj linii
-set showmatch  " pokazuja matchujace nawiasy
 "set smarttab - moze uzyc
 "set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
 
-set showcmd " ???
-set hlsearch " zaznaczanie w szukajce
-set laststatus=2 " pokazuj linie ze statusem
-
-" kodowanie
-set fileencodings=utf-8,latin2
 set encoding=utf-8
 
-
-""set foldmethod=indent
-""set foldcolumn=3 	" kolumna z zaznaczonymi foldami
-""set foldminlines=2
-""set foldnestmax=10
-""set foldlevel=1
-set visualbell
-set cc=120
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%81v.\+/
-
-set wildmenu " pokazanie (bash-like) przy tab
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Backups
 set directory=~/.swp-vim/
 
-" zawsze pokazuj pasek z gita
-set signcolumn=yes
-
-" colorscheme elflord " kolorki :]
-" colorscheme desesmarttabrt " kolorki :]
-" colorscheme eclipse " kolorki :]
-" colorscheme zmrok " kolorki :]
-colorscheme jellybeans " kolorki :]
-
-" magiczne aliasy sobie porobilem dla zwijania :)
-"map <C-x> zo
-"map <C-z> zc
-nnoremap <silent> <C-D> :NERDTreeToggle<CR>
-nnoremap <silent> <C-F> :NERDTreeFind<CR>
-nnoremap <silent> <C-N> :silent noh<CR>
-"noremap <C-M> :set hlsearch! hlsearch?<CR> - sciągnąc z pracy
-
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
 " Plugins config {{{
-
-" disable concealing in JSON files
-let g:vim_json_syntax_conceal = 0
 
 if (has("gui_running"))
 "    let g:airline_left_sep=''
@@ -142,31 +62,3 @@ endif
 " golden ration nie rusza tagbar i nerdtree
 "let g:golden_ratio_exclude_nonmodifiable = 1
 "let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
-" disable default mapping
-let g:goldenview__enable_default_mapping = 0
-
-" YCM config
-let $PATH = expand("~/.nvm/versions/node/v24.11.1/bin") . ":" . $PATH
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_show_diagnostics_ui = 1
-nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-"nnoremap <leader>rn :YcmCompleter RefactorRename<CR>
-nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
-nnoremap <leader>f  :YcmCompleter FixIt<CR>
-nnoremap <leader>d  :YcmDiags<CR>
-
-" dodatkowe kolory
-" if exists('$TERM') && $TERM ==# 'tmux-256color'
-if exists('$TERM') && ($TERM ==# 'tmux-256color' || $TERM ==# 'screen-256color')
-    set termguicolors
-    let g:gruvbox_contrast_dark = 'soft'
-    let g:tokyonight_style = 'night'
-    let g:tokyonight_enable_italic = 1
-
-    "colorscheme tokyonight
-    colorscheme catppuccin_mocha
-endif
-
-" przemapuj ESC
-inoremap jk <Esc>
