@@ -2,6 +2,8 @@
 " a moj pliczek vima ;]
 "
 "
+let $PATH = expand("~/.nvm/versions/node/v24.14.0/bin") . ":" . $PATH
+
 set nocompatible    " hmm ? :)
 filetype off
 

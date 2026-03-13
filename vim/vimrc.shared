@@ -68,10 +68,13 @@ let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 
 " YCM config
-let $PATH = expand("~/.nvm/versions/node/v24.11.1/bin") . ":" . $PATH
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_show_diagnostics_ui = 1
+let g:ycm_enable_semantic_highlighting = 1
+let g:ycm_enable_diagnostic_highlighting = 0 " highlight broken part
+"let g:ycm_show_detailed_diag_in_popup = 1
+
 nnoremap <silent> <C-D> :NERDTreeToggle<CR>
 nnoremap <silent> <C-F> :NERDTreeFind<CR>
 nnoremap <silent> <C-N> :silent noh<CR>
@@ -81,6 +84,7 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
 nnoremap <leader>f  :YcmCompleter FixIt<CR>
 nnoremap <leader>d  :YcmDiags<CR>
+
 nnoremap <leader>tc :ContrastToggle<CR>
 
 " przemapuj ESC
@@ -117,3 +121,6 @@ let g:jsdoc_underscore_private = 1
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1
+
+" for git commit move vertical bar closer
+autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=+1
