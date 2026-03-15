@@ -19,6 +19,7 @@ Plugin 'ctrlpvim/ctrlp.vim'                              " fuzzy file/buffer fin
 Plugin 'preservim/nerdtree'                              " file tree explorer sidebar
 Plugin 'preservim/tagbar'                                " symbols/tags outline window
 Plugin 'zhaocai/GoldenView.Vim'                          " auto-balance split windows
+"Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
 Plugin 'vim-airline/vim-airline'                         " status/tabline UI
 Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 
@@ -26,10 +27,14 @@ Plugin 'vim-airline/vim-airline-themes'                  " airline theme pack
 Plugin 'godlygeek/tabular'                               " align text by pattern
 Plugin 'tpope/vim-surround'                              " add/change/delete surrounds
 Plugin 'nathanaelkane/vim-indent-guides'                 " indent guides
+"Plugin 'AutoClose'                                      " auto-close brackets/quotes
 
 " autocomplete
 Plugin 'ervandew/supertab'                               " Tab-triggered insert completion
 Plugin 'ycm-core/YouCompleteMe'                          " semantic code completion
+
+" testing
+Plugin 'vim-test/vim-test'                               " run tests from Vim
 
 " syntax
 Plugin 'pangloss/vim-javascript'                         " JavaScript syntax
@@ -41,6 +46,8 @@ Plugin 'kchmck/vim-coffee-script'                        " CoffeeScript syntax
 Plugin 'digitaltoad/vim-pug'                             " jade/pug markup
 Plugin 'MaxMEllon/vim-jsx-pretty'                        " JSX syntax
 Plugin 'robbles/logstash.vim'                            " Logstash syntax
+"Plugin 'ada.vim'                                        " Ada syntax support
+"Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
 
 " komentowanie
 Plugin 'preservim/nerdcommenter'                         " quick comment toggles

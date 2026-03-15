@@ -16,12 +16,9 @@ execute 'source ' . fnameescape(s:cfg_dir . '/plugins.shared.vim')
 "Plugin 'PapayaWhip'                                     " colorscheme: papayawhip
 
 " boxy / nawigacja / szukanie
-"Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
-
 " wyrownywanie / edycja
 Plugin 'kien/rainbow_parentheses.vim'                    " rainbow parentheses
 Plugin 'dodie/vim-disapprove-deep-indentation'           " highlight deep indentation
-"Plugin 'AutoClose'                                      " auto-close brackets/quotes
 "Plugin 'snippetsEmu'                                    " snippet expansion helper
 
 " autocomplete
@@ -34,9 +31,7 @@ Plugin 'itkq/fluentd-vim'                                " fluentd config
 Plugin 'kergoth/vim-bitbake'                             " bitbake files
 Plugin 'mfukar/robotframework-vim'                       " Robot Framework syntax
 "Plugin 'vim-scripts/logstash.vim'                       " legacy logstash syntax
-"Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
 "Plugin 'cpp.vim'                                        " C/C++ syntax support
-"Plugin 'ada.vim'                                        " Ada syntax support
 
 " framework / domain
 "Plugin 'ruby.vim'                                       " Ruby syntax (legacy)
@@ -54,40 +49,25 @@ Plugin 'tpope/vim-speeddating'                           " increment/decrement d
 call vundle#end()
 execute 'source ' . fnameescape(s:cfg_dir . '/vimrc.shared')
 
-set ts=4                  " szerokosc tabulacji :)
-set sw=4                  " szerokosc automagicznego wciecia
+set tabstop=4             " szerokosc tabulacji :)
+set shiftwidth=4          " szerokosc automagicznego wciecia
 " set smarttab - moze uzyc
-set backspace=2           " dzialaj backaspace!
+set backspace=indent,eol,start " dzialaj backspace!
 
 " visualbell
 " totaly disabled :-)
 set t_vb=
 
-" Backups
-set directory=~/.swp-vim/
-
-"let g:html_indent_inctags = "html,body,head,tbody"
-"let g:html_indent_script1 = "inc"
-"let g:html_indentsmarttab_style1 = "inc"
-"
-"let g:golden_ratio_exclude_nonmodifiable = 1
+"let g:html_indent_inctags = 'html,body,head,tbody'
+"let g:html_indent_script1 = 'inc'
+"let g:html_indentsmarttab_style1 = 'inc'
 "
 " Funky syntax highlighter
 "set statusline+=%#warningmsg#
 "set statusline+=%*
 
-
-" JSON plugin
-
 " Konfiguracja kolorow
 let g:jellybeans_use_lowcolor_black = 0
-
-" YCM + tagi
-" zamknij okno z podpowiedziami
-
-" golden ration nie rusza tagbar i nerdtree
-"let g:golden_ratio_exclude_nonmodifiable = 1
-"let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
 
 " Section AutoGroups {{{
 augroup configgroup

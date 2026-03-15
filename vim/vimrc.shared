@@ -10,6 +10,8 @@ set showmatch  " pokazuja matchujace nawiasy
 set cursorline " pokazuj zaznaczenie linii
 set showcmd " ???
 set hlsearch " zaznaczanie w szukajce
+set ignorecase " szukaj bez rozrozniania wielkosci liter
+set smartcase " gdy wzorzec ma DUZE litery, szukaj case-sensitive
 set laststatus=2 " pokazuj linie ze statusem
 set signcolumn=yes
 set conceallevel=0
@@ -19,6 +21,7 @@ set fileencodings=utf-8,latin2
 
 set visualbell
 set cc=120
+set directory=~/.swp-vim/
 
 set wildmenu " pokazanie (bash-like) przy tab
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -39,7 +42,7 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 colorscheme jellybeans " kolorki :]
 
 " dodatkowe kolory
-if &term =~# 'tmux-256color\|screen-256color'
+if has('termguicolors') && &term =~# 'tmux-256color\|screen-256color'
     set termguicolors
     colorscheme catppuccin_mocha
 endif
@@ -51,6 +54,10 @@ let g:vim_json_syntax_conceal = 0
 
 " disable default mapping
 let g:goldenview__enable_default_mapping = 0
+
+" golden ratio nie rusza tagbar i nerdtree
+"let g:golden_ratio_exclude_nonmodifiable = 1
+"let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
 
 " ag z ack
 if executable('ag')
@@ -84,6 +91,13 @@ nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>rn :execute 'YcmCompleter RefactorRename ' . input('Rename to: ', expand('<cword>'))<CR>
 nnoremap <leader>f  :YcmCompleter FixIt<CR>
 nnoremap <leader>d  :YcmDiags<CR>
+
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 nnoremap <leader>tc :ContrastToggle<CR>
 

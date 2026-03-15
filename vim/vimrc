@@ -2,6 +2,8 @@
 " a moj pliczek vima ;]
 "
 "
+let $PATH = expand("~/.nvm/versions/node/v24.14.0/bin") . ":" . $PATH
+
 set nocompatible    " hmm ? :)
 filetype off
 
@@ -15,18 +17,10 @@ Plugin 'ghifarit53/tokyonight-vim'                       " colorscheme: tokyonig
 Plugin 'nordtheme/vim'                                   " colorscheme: nord
 
 " boxy / nawigacja / szukanie
-"Plugin 'roman/golden-ratio'                             " auto-resize windows (alt)
-
 " wyrownywanie / edycja
-"Plugin 'AutoClose'                                      " auto-close brackets/quotes
-
-" autocomplete
-
 " syntax
 Plugin 'saltstack/salt-vim'                              " SaltStack syntax
 "Plugin 'ap/vim-css-color'                               " preview CSS colors inline
-"Plugin 'ada.vim'                                        " Ada syntax support
-"Plugin 'rodjek/vim-puppet'                              " Puppet syntax support
 
 " framework / domain
 Plugin 'exu/pgsql.vim'                                   " PostgreSQL SQL syntax
@@ -38,27 +32,10 @@ Plugin 'kylef/apiblueprint.vim'                          " API Blueprint syntax
 call vundle#end()
 execute 'source ' . fnameescape(s:cfg_dir . '/vimrc.shared')
 
-set ts=2       " szerokosc tabulacji :)
-set sw=2       " szerokosc automagicznego wciecia
+set tabstop=2    " szerokosc tabulacji :)
+set shiftwidth=2 " szerokosc automagicznego wciecia
 "set smarttab - moze uzyc
-"set cursorline     " pokazuj zaznaczenie linii - woleeeeee w MacVim
 
 set encoding=utf-8
 
-
-" Backups
-set directory=~/.swp-vim/
-
-" Plugins config {{{
-
-if (has("gui_running"))
-"    let g:airline_left_sep=''
-"    let g:airline_right_sep=''
-"    let g:airline_powerline_fonts=0
-"    let g:airline_theme='jellybeans'
-endif
-" }}}
-
-" golden ration nie rusza tagbar i nerdtree
-"let g:golden_ratio_exclude_nonmodifiable = 1
-"let g:golden_ratio_filetypes_blacklist = ["nerdtree", "tagbar"]
+let g:airline_powerline_fonts = 1
