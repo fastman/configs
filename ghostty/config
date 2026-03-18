@@ -1,0 +1,43 @@
+# --- Font ---
+# font-family = Monaco
+font-family = Menlo
+adjust-cell-height = 4
+
+# font-family = 0xProto Nerd Font Mono
+font-size = 10
+
+
+# --- Theme ---
+theme = Dracula+
+#theme = Oceanic Next
+#theme = Catppuccin Mocha
+#theme = Jellybeans
+
+# --- Window layout ---
+window-padding-x = 2
+window-padding-y = 0
+window-padding-color = extend
+window-padding-balance = true
+
+# --- Window size ---
+window-height = 66
+window-width = 260
+
+# --- macOS ---
+macos-option-as-alt = true
+# macos-titlebar-style = hidden
+
+# --- Behavior ---
+mouse-hide-while-typing = true
+
+# --- Cursor ---
+cursor-style-blink = true
+cursor-style = block
+cursor-color = #D9C900
+
+scrollback-limit = 1000
+
+# shell-integration-features = ssh-terminfo,ssh-env
+
+# --- Performance ---
+window-vsync = true
